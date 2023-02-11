@@ -1,0 +1,10 @@
+@model Carte
+<form asp-controller="Home" asp-action="AjouterCarte" method="post">
+	<div class="form-group">
+		<label asp-for="Titre">Titre</label>
+		<input type="text" id="Titre" name="Titre" value="@Model.Titre" />
+		<label asp-for="Description">Description</label>
+		<input type="text" id="Description" name="Description" value="@Model.Description" />
+		<input type="submit" value="ajouter la carte" />
+	</div>
+</form>

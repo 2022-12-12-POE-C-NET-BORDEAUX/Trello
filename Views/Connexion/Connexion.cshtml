@@ -1,0 +1,19 @@
+<body>
+	<link rel="stylesheet" href="~/css/site.css" />
+
+
+	<h1>Connexion</h1>
+	<form asp-action="Connexion" asp-controller="Connexion" class="connexionform">
+		<input type="email" name="email" placeholder="Enter your email">
+		<input type="password" name="mdp" placeholder="Enter your Password">
+		<input type="submit" value="Connexion">
+	</form>
+
+	<form asp-action="Inscription" asp-controller="Connexion" class="connexionform">
+		<input type="text" name="nom" placeholder="Enter your name">
+		<input type="email" name="email" placeholder="Enter your email">
+		<input type="password" name="mdp" placeholder="Enter your password">
+		<input type="submit" value="Inscription">
+	</form>
+</body>
+

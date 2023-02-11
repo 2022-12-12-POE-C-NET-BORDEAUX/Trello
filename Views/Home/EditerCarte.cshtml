@@ -1,0 +1,9 @@
+@* formulaire pour modifier les cartes *@
+
+@model Carte
+
+<form asp-controller="Home" asp-action="EditerCarte">
+	<p>Nom :<input type="text" name="Titre" value="@Model.Titre" /></p>
+	<p>Description><input type="text" name="Description" value="@Model.Description" /></p>
+	<input type="submit" value="Modifier" />
+</form>

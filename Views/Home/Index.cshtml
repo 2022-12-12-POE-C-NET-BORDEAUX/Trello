@@ -1,0 +1,46 @@
+﻿@model Projet
+<link rel="stylesheet" href="~/css/site.css" />
+@{
+    ViewData["Title"] = "Home Page";
+	ViewData["Projet"] = Model;
+}
+
+<h1>
+	@Model.Nom
+</h1>
+<h2>
+	@Model.Description
+</h2>
+<div class="Projet">
+@foreach (var item in Model.Listes)
+	{
+		<div class="Liste">
+			<p class="titre">@item.Nom</p>
+			@foreach (var cards in item.Cartes)
+			{
+				<div class="Carte">
+					<h3 class="cartetitre">@cards.Titre</h3>
+					<hr />
+					<p>@cards.Description</p>
+					<a asp-action="SupprimerCarte" asp-controller="Home" asp-route-id="@cards.Id">
+						<input type="button" value="Supprimer" />
+					</a>
+					<a asp-action="EditerCarte" asp-controller="Home" asp-route-id="@cards.Id">
+						<input type="button" value="Editer" />
+					</a>
+				</div>
+			}
+			<a asp-action="ajouterCarte" asp-controller="Home" asp-route-id="@item.Id">
+				<input type="button"  value="Ajouter une carte" />
+			</a>
+			<a asp-action="SupprimerListe" asp-controller="Home" asp-route-id="@item.Id">
+				<input type="button" value="Supprimer" />
+			</a>
+		</div>
+	}
+	<div class="Liste">
+		<a asp-controller="Home" asp-action="AjouterListe">
+			<button value="Ajouter une liste"> Ajouter une liste </button>
+		</a>
+	</div>
+</div>
